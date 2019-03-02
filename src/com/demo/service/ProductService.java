@@ -1,32 +1,21 @@
 package com.demo.service;
 
-import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Properties;
 
 import com.demo.model.Product;
 
 public class ProductService {
 	
 	Connection con=null;
-	//Properties props = new Properties();
-	//FileInputStream fis = null;
 	public ProductService() {
 		
 		try {
-				//fis = new FileInputStream("config.properties");
-				//props = new Properties();
-				//props.load(fis);
-				//String dname = (String)props.get("DB_DRIVER_CLASS");
-				//String durl = (String)props.get("DB_URL");
-				//String duser = (String)props.get("DB_USERNAME");
-				//String dpass = (String)props.get("DB_PASSWORD");
-	        	Class.forName("com.mysql.jdbc.Driver");
-	        	con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feb2019","root","mypassword");
+	        	Class.forName("com.mysql.cj.jdbc.Driver");
+	        	con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feb2019","root","root");
 	        }
 		catch(Exception e) {
 			System.out.println("hi baby");
